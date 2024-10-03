@@ -40,6 +40,6 @@ RUN git init .
 WORKDIR ${OPENPILOT_PATH}/docs
 RUN make html
 
-FROM nginx:1.21
+FROM nginx:1.27.2
 COPY --from=0  /home/batman/openpilot/build/docs/html /usr/share/nginx/html
 COPY ./docs/docker/nginx.conf /etc/nginx/conf.d/default.conf
